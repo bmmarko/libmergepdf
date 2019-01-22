@@ -47,7 +47,7 @@ final class Pages implements PagesInterface
     /**
      * Add a single page
      */
-    public function addPage(int $page): void
+    public function addPage(int $page)
     {
         $this->pages[] = $page;
     }
@@ -55,7 +55,7 @@ final class Pages implements PagesInterface
     /**
      * Add a range of pages
      */
-    public function addRange(int $start, int $end): void
+    public function addRange(int $start, int $end)
     {
         $this->pages = array_merge($this->pages, range($start, $end));
     }

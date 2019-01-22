@@ -35,7 +35,7 @@ final class Merger
     /**
      * Add raw PDF from string
      */
-    public function addRaw(string $content, PagesInterface $pages = null): void
+    public function addRaw(string $content, PagesInterface $pages = null)
     {
         $this->sources[] = new RawSource($content, $pages);
     }
@@ -43,7 +43,7 @@ final class Merger
     /**
      * Add PDF from file
      */
-    public function addFile(string $filename, PagesInterface $pages = null): void
+    public function addFile(string $filename, PagesInterface $pages = null)
     {
         $this->sources[] = new FileSource($filename, $pages);
     }
@@ -53,7 +53,7 @@ final class Merger
      *
      * Note that optional pages constraint is used for every added pdf
      */
-    public function addIterator(iterable $iterator, PagesInterface $pages = null): void
+    public function addIterator(iterable $iterator, PagesInterface $pages = null)
     {
         foreach ($iterator as $filename) {
             $this->addFile($filename, $pages);
@@ -63,7 +63,7 @@ final class Merger
     /**
      * Merges loaded PDFs
      */
-    public function merge(): string
+    public function merge()
     {
         return $this->driver->merge(...$this->sources);
     }
@@ -71,7 +71,7 @@ final class Merger
     /**
      * Reset internal state
      */
-    public function reset(): void
+    public function reset()
     {
         $this->sources = [];
     }
